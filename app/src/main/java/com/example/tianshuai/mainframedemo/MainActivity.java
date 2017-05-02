@@ -20,9 +20,7 @@ import com.example.tianshuai.mainframedemo.fragment.MainFragment;
 public class MainActivity extends AppCompatActivity {
     private TabHost tabHost;
     private RadioGroup radiogroup;
-    RadioButton radioSearch;
-    RadioButton radioMain;
-    RadioButton radioMycenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,12 +47,6 @@ public class MainActivity extends AppCompatActivity {
     public void initView(){
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
         tabHost = (TabHost) findViewById(R.id.tabhost);
-        radioSearch=(RadioButton) findViewById(R.id.radio_search);
-         radioMain=(RadioButton) findViewById(R.id.radio_main);
-        radioMycenter=(RadioButton) findViewById(R.id.radio_mycenter);
-
-        tabHost.setup();
-
         tabHost.addTab(tabHost.newTabSpec("main").setIndicator("main")
                 .setContent(R.id.fragment_main));
         tabHost.addTab(tabHost.newTabSpec("mycenter").setIndicator("mycenter")
@@ -74,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                         //如果需要动画效果就使用
                         //setCurrentTabWithAnim(currentTab, 0, "main");
                         getSupportActionBar().setTitle("首页");
-                        //setSelector(radioMain);
                         break;
                     case R.id.radio_mycenter:
                         //tabHost.setCurrentTabByTag("mycenter");
@@ -84,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.radio_search:
                         tabHost.setCurrentTabByTag("search");
-
                         getSupportActionBar().setTitle("搜索");
                         break;
                 }
@@ -95,12 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void setSelector(View view){
-        radioSearch.setSelected(false);
-        radioMain.setSelected(false);
-        radioMycenter.setSelected(false);
-        view.setSelected(true);
-    }
 
     private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItemClickListener() {
 
