@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void initView(){
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
         tabHost = (TabHost) findViewById(R.id.tabhost);
+        tabHost.setup();
         tabHost.addTab(tabHost.newTabSpec("main").setIndicator("main")
                 .setContent(R.id.fragment_main));
         tabHost.addTab(tabHost.newTabSpec("mycenter").setIndicator("mycenter")
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("首页");
                         break;
                     case R.id.radio_mycenter:
-                        //tabHost.setCurrentTabByTag("mycenter");
+                        tabHost.setCurrentTabByTag("mycenter");
                         //setCurrentTabWithAnim(currentTab, 1, "mycenter");
                         getSupportActionBar().setTitle("个人中心");
 
