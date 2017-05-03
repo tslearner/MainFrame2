@@ -29,6 +29,25 @@ public class MainActivity extends AppCompatActivity {
         initView();
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        String msg = "";
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                msg += "Click search";
+                break;
+            case R.id.action_add:
+                msg += "Click add";
+                break;
+        }
+
+        if(!msg.equals("")) {
+            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
+
     public void initToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         // App Logo
@@ -39,9 +58,10 @@ public class MainActivity extends AppCompatActivity {
         // Sub Title
 //        toolbar.setSubtitle("Sub title");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Navigation Icon
         toolbar.setNavigationIcon(R.mipmap.profile_card_company_icon);
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
+        //toolbar.setOnMenuItemClickListener(onMenuItemClick);
     }
 
     public void initView(){

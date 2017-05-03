@@ -1,5 +1,6 @@
 package com.example.tianshuai.mainframedemo.fragment;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.tianshuai.mainframedemo.R;
 
@@ -46,10 +48,10 @@ public class MainFragment extends Fragment {
     public void initViews(){
         //使用适配器将ViewPager与Fragment绑定在一起
         mViewPager= (ViewPager) view.findViewById(R.id.viewPager);
-        MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new Fragment_aa(), "AAAAAA");
-        adapter.addFragment(new FragmentB(), "BB");
-        mViewPager.setAdapter(adapter);
+        myPagerAdapter = new MyPagerAdapter(getChildFragmentManager());
+        myPagerAdapter.addFragment(new Fragment_aa(), "AAAAAA");
+        myPagerAdapter.addFragment(new FragmentB(), "BB");
+        mViewPager.setAdapter(myPagerAdapter);
 
         //将TabLayout与ViewPager绑定在一起
         mTabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
