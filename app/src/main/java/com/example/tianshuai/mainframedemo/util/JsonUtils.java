@@ -15,6 +15,8 @@ import java.lang.reflect.Type;
  */
 public class JsonUtils {
 
+    
+    private int a=0;
     private static Gson mGson = new Gson();
 
     /**
