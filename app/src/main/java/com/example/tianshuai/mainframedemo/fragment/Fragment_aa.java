@@ -106,6 +106,8 @@ public class Fragment_aa  extends Fragment implements NewsContract.View, SwipeRe
             mData.clear();
 
 
+
+
         }
         mNewsPresenter.loadNews(mType, pageIndex);
     }
