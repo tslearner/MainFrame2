@@ -22,6 +22,8 @@ import java.util.List;
 public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_FOOTER = 1;
+
+
     private Boolean isEnd=false;
 
     private List<NewsBean> mData;

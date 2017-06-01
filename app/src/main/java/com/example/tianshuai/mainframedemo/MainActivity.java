@@ -3,6 +3,8 @@ package com.example.tianshuai.mainframedemo;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +22,8 @@ import com.example.tianshuai.mainframedemo.fragment.MainFragment;
 public class MainActivity extends AppCompatActivity {
     private TabHost tabHost;
     private RadioGroup radiogroup;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void initToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+
+
         // App Logo
       //  toolbar.setLogo(R.mipmap.chat_send_normal);
         // Title
@@ -62,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
         //Navigation Icon
         toolbar.setNavigationIcon(R.mipmap.profile_card_company_icon);
         //toolbar.setOnMenuItemClickListener(onMenuItemClick);
+
+       /* mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open,
+                R.string.drawer_close);
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle);*/
     }
 
     public void initView(){
