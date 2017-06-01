@@ -18,6 +18,7 @@ public class JsonUtils {
     
     private int a=0;
     private int b=1;
+    private  int c=2;
     private static Gson mGson = new Gson();
 
     /**
